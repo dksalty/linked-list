@@ -2,14 +2,17 @@ import { Node } from "./node"
 export function LinkedList(){
 let headNode = null
 const append = (value) => {
+let newNode = Node(value)
 if(headNode === null){
-headNode = Node(value)
+headNode = newNode
 }
-if(headNode === Node(value)){
-headNode.nextNode = currentNode
+else {
+let currentNode = headNode;
+while(currentNode.nextNode !== null){
+currentNode = currentNode.nextNode
 }
-
-
+currentNode.nextNode = newNode 
+ }
 }
 const prepend = (value) => {
 
