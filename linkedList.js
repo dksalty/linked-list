@@ -15,17 +15,39 @@ currentNode.nextNode = newNode
  }
 }
 const prepend = (value) => {
-
+let newNode = Node(value)
+if(headNode === null){
+headNode = newNode
+}
+else{
+newNode.nextNode = headNode
+headNode = newNode
+}
 }
 const size = () => {
-
+let count = 0;
+if(headNode === null){
+    return count
+}
+else {
+let currentNode = headNode
+while(currentNode !== null){
+count++   
+currentNode = currentNode.nextNode
+}
+}
+return count
 }
 const head = () => {
 if(headNode === null){
     return undefined
 }
+return headNode
 }
 const tail = () => {
+if(headNode === null){
+    return undefined
+}
 
 }
 const at = (index) => {
