@@ -103,11 +103,34 @@ return false
 }
 
 const findIndex = (value) => {
-
+let count = 0;
+let currentNode = headNode
+while(currentNode !== null){
+if(currentNode.value === value){
+return count
 }
+count++
+currentNode = currentNode.nextNode
+}
+return -1
+}
+
 const toString = () => {
-
+if(headNode === null){
+    return ""
 }
+else {
+let currentNode = headNode;
+let string = "";
+while(currentNode !== null){
+string += `( ${currentNode.value} ) -> `
+currentNode = currentNode.nextNode
+}
+string += " null"
+return string
+}
+}
+
 const insertAt = (index, ...values) => {
 
 }
